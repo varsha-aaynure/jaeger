@@ -1,0 +1,26 @@
+language: go
+
+go: 1.17.x
+
+arch: ppc64le
+
+dist: focal
+
+before_install: 
+  - echo "Validating jaeger upstream repo"
+  
+install:
+  - sudo apt install -y gcc make
+
+script:
+  # Adds the jaeger-ui submodule
+  - git submodule update --init --recursive
+  
+  # Installs required tools
+  - make install-tools
+  
+  # Runs all unit tests
+  - make test
+
+after_success:
+    - echo "Completed execution"
