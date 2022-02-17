@@ -19,8 +19,6 @@ script:
   # Installs required tools
   - make install-tools
   
-  - make 
-  
   # Runs all unit tests
   - make test
 
