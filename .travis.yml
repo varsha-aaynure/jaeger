@@ -10,8 +10,8 @@ before_install:
   - echo "Validating jaeger upstream repo"
   
 install:
-  - sudo apt install -y gcc make
-
+  - sudo apt install gcc make -y
+  
 script:
   # Adds the jaeger-ui submodule
   - git submodule update --init --recursive
