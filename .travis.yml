@@ -1,6 +1,6 @@
 language: go
 
-go: 1.17.x
+go: 1.17.5
 
 arch: ppc64le
 
@@ -18,6 +18,8 @@ script:
   
   # Installs required tools
   - make install-tools
+  
+  - make 
   
   # Runs all unit tests
   - make test
